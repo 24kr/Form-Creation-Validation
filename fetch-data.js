@@ -18,7 +18,9 @@ async function fetchUserData() {
         displayUsers(users);
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
-        dataContainer.innerHTML = `<p>Error fetching user data: ${error.message}</p>`;
+        // Clear existing content and set error message
+        dataContainer.innerHTML = '';
+        dataContainer.textContent = 'Failed to load user data.';
     }
 }
 
