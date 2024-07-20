@@ -1,4 +1,5 @@
 const dataContainer = document.getElementById('api-data');
+document.addEventListener('DOMContentLoaded', () => {
 
 // URL of the public API endpoint
 const apiUrl = 'https://jsonplaceholder.typicode.com/users';
@@ -7,7 +8,7 @@ const apiUrl = 'https://jsonplaceholder.typicode.com/users';
 async function fetchUserData() {
     // Clear existing content
     dataContainer.innerHTML = '';
-
+    
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -25,7 +26,7 @@ async function fetchUserData() {
 function displayUsers(users) {
     // Create a <ul> element
     const userList = document.createElement('ul');
-
+    
     // Loop through the users array
     users.forEach(user => {
         // Create a <li> element
@@ -35,12 +36,10 @@ function displayUsers(users) {
         // Append the <li> to userList
         userList.appendChild(listItem);
     });
-
+    
     // Append userList to dataContainer
     dataContainer.appendChild(userList);
 }
 
 // Event listener for DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    fetchUserData();
 });
