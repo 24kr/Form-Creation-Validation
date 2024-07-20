@@ -7,18 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent the form from submitting
 
-        let isValid = true; // Track overall validation status
-        let messages = []; // Array to store validation error messages
+        let isValid = true; 
+        let messages = []; 
 
         // Reset feedback div
         feedbackDiv.style.display = "block";
         feedbackDiv.innerHTML = "";
-        feedbackDiv.style.color = ""; // Reset color in case of previous validation attempts
+        feedbackDiv.style.color = ""; 
 
         // Get form values
-        const username = document.getElementById("username").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
         // Validate username
         if (username.length < 3) {
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Display validation messages
         if (isValid) {
             feedbackDiv.textContent = "Registration successful!";
-            feedbackDiv.style.color = "#28a745"; // Green color for success message
+            feedbackDiv.style.color = "#28a745"; 
         } else {
             feedbackDiv.innerHTML = messages.join("<br>");
-            feedbackDiv.style.color = "#dc3545"; // Red color for error messages
+            feedbackDiv.style.color = "#dc3545"; 
         }
     });
 
-    // Helper function to validate email format
+    // function validation for email
     function isValidEmail(email) {
         return email.includes('@') && email.includes('.');
     }
