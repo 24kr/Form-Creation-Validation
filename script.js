@@ -1,4 +1,6 @@
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', (event) => {
+});
+
     const form = document.getElementById("registration-form").wrap;
     const feedbackDiv = getElementById("form-feedback");
     const username = getElementById("username").value.trime();
@@ -14,5 +16,3 @@ window.onload = function () {
 
     let isValid = true;
     let messages=[];
-
-}
